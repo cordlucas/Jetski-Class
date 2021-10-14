@@ -1,0 +1,62 @@
+package trabpoo;
+
+import static java.lang.Integer.parseInt;
+import static java.lang.Double.parseDouble;
+import java.util.Scanner;
+
+/**
+ *
+ * @author tatia
+ */
+public class Jetski extends Barco {
+    String tipoCasco;
+    boolean reboque;
+    
+    public Jetski(){
+}
+    
+    public Jetski(String marca, String modelo, String cor, String identificacao, int numPassageiros, int velocidadeMax, double preco, double altura){
+        super(marca, modelo, cor, identificacao, numPassageiros, velocidadeMax, preco, altura);
+    }
+    
+    public Jetski(String tipoCasco, boolean reboque){
+        this.tipoCasco = tipoCasco;
+        this.reboque = reboque;
+    }
+    
+    public Jetski (String marca, String modelo, String cor, String identificacao, int numPassageiros, int velocidadeMax, double preco, double altura, String tipoCasco, boolean banheiro){
+        super(marca, modelo, cor, identificacao, numPassageiros, velocidadeMax, preco, altura);
+        this.tipoCasco = tipoCasco;
+        this.reboque = reboque;
+    }
+    
+    //Métodos Getters
+    public String getCasco(){
+        return tipoCasco;
+    }
+    
+    public boolean getReboque(){
+        return reboque;
+    }
+    
+    //Métodos Setters
+    
+    public void setCasco(String casco){
+        this.tipoCasco = casco;
+    }
+    
+    public void setReboque(boolean reboque){
+        this.reboque = reboque;
+    }
+    
+    /*@Override 
+    public void entradaDados(){
+        Scanner ent = new Scanner(System.in);
+        System.out.println("Tipo de casco                  : ");
+        setCasco(ent.nextLine());
+        System.out.println("Possui banheiro?               : ");
+        setBanheiro(ent.nextBoolean());       
+    }
+    */
+    
+}//fim jetski extends
