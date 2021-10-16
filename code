@@ -61,7 +61,7 @@ public class Jetski extends Barco {
         setPreco(preco);
         setAltura(altura);
         
-        //Atributos exclusivos da classe atual. Subistituam pelos das classes iate e jetski
+        //Atributos exclusivos da classe atual
         setCasco(casco);
         setReboque(reboque);
     }
