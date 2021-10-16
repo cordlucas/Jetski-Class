@@ -6,11 +6,12 @@ import java.util.Scanner;
 
 /**
  *
- * @author tatia
+ * @author Lucas Andrade
  */
 public class Jetski extends Barco {
-    String tipoCasco;
-    boolean reboque;
+    private String tipoCasco;
+    private boolean reboque;
+    private double desconto = 0.85;
     
     public Jetski(){
 }
@@ -49,14 +50,40 @@ public class Jetski extends Barco {
         this.reboque = reboque;
     }
     
-    /*@Override 
-    public void entradaDados(){
-        Scanner ent = new Scanner(System.in);
-        System.out.println("Tipo de casco                  : ");
-        setCasco(ent.nextLine());
-        System.out.println("Possui banheiro?               : ");
-        setBanheiro(ent.nextBoolean());       
+     //Métodos da classe
+    public void cadastrar(String marca, String modelo, String cor, String identificacao, int numPassageiros, int velocidadeMax, double preco, double altura, String casco, boolean reboque){
+        setMarca(marca);
+        setModelo(modelo);
+        setCor(cor);
+        setIdentificacao(identificacao);
+        setPassageiros(numPassageiros);
+        setVelocidade(velocidadeMax);
+        setPreco(preco);
+        setAltura(altura);
+        
+        //Atributos exclusivos da classe atual. Subistituam pelos das classes iate e jetski
+        setCasco(casco);
+        setReboque(reboque);
     }
-    */
+    
+    @Override
+    public void entradaDados(){
+        super.entradaDados();
+        
+        Scanner ent = new Scanner(System.in);
+        System.out.println("Tipo de casco               : ");
+        setCasco(ent.nextLine());
+        System.out.println("Possui Reboque?            : ");
+        setReboque(ent.nextBoolean());       
+    }
+
+    @Override
+    public void imprimir(){
+        super.imprimir();
+        
+        System.out.println("Tipo de casco               : " + getCasco());
+        System.out.println("Possui Reboque             : " + getReboque());
+        
+    }
     
 }//fim jetski extends
